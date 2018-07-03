@@ -410,7 +410,7 @@ code_reflect Unification
   datatypes
     "term" = V | T
     and
-    char = zero_char_inst.zero_char | Char
+    char = Char
   functions
     solve
 
@@ -423,9 +423,9 @@ lemma "solve([(T([],[]),T([],[]))],[]) = Some []"
 
 ML_val \<open> solve([(T([],[]),T([],[]))],[]) \<close>
 
-lemma "solve([(T([zero_char_inst.zero_char],[]),T([],[]))],[]) = None"
+lemma "solve([(T([Char False False False False False False False False],[]),T([],[]))],[]) = None"
   by code_simp
 
-ML_val \<open> solve([(T([Zero_char],[]),T([],[]))],[]) \<close>
+ML_val \<open> solve([(T([Chara(false,false,false,false,false,false,false,false)],[]),T([],[]))],[]) \<close>
 
 end
